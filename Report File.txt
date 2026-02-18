@@ -1,13 +1,14 @@
-<h1><br>Project Report: Offroad Terrain Semantic Segmentation </br></h1>
-<h2> Project Title </h2>
+Project Report: Offroad Terrain Semantic Segmentation 
+
+Project Title 
 Offroad-Seg: Robust Terrain Semantic Segmentation using DINOv2 and Multi-Scale Fusion
 
-<h2>Project Description </h2>
+Project Description 
 This project focuses on the challenge of Semantic Segmentation in unstructured offroad environments. Unlike urban road segmentation, offroad environments lack clear lane markings and standardized geometry. This model is designed to classify 11 distinct terrain categories—such as Lush Bushes, Ground Clutter, and Rocks—to assist in autonomous navigation and obstacle avoidance for offroad vehicles.
 
 By leveraging a pre-trained DINOv2 backbone, the system extracts high-level semantic features which are then processed by a custom-built Multi-Scale Segmentation Head to produce pixel-perfect classification maps.
 
-<h2>Dataset</h2>
+Dataset :
 The project utilizes a specialized Offroad Segmentation Training Dataset.
 
 Structure: The dataset is organized into Color_Images (RGB) and Segmentation (Masks).
@@ -16,10 +17,10 @@ Classes: It features 11 classes mapped from specific raw pixel values (e.g., Tre
 
 Augmentation: To compensate for varied lighting and terrain, the Albumentations library is used to apply Horizontal Flips, Random Rotations, and Shift-Scale-Rotate transforms.
 
-<h2> Model / Approach :</h2>
+ Model / Approach :
 The architecture is designed to maximize accuracy while remaining efficient enough for a 4GB VRAM GPU.Backbone: DINOv2 (ViT-Small). This Vision Transformer provides "frozen" universal features, meaning we don't need a massive dataset to get high-quality results.Segmentation Head: A custom Multi-Scale Head that uses parallel convolutional paths ($3\times3, 5\times5, 7\times7$) to capture objects of different sizes simultaneously.Loss Function: A Combo Loss approach integrating:Cross-Entropy: For general classification.Dice Loss: To optimize the overlap between predicted and ground-truth shapes.Focal Loss: To force the model to focus on "hard" examples (like thin logs or small rocks).
 
-<h2>Installation & Setup:</h2>
+Installation & Setup:
 To avoid common environment conflicts encountered during development, follow these steps:
 
 Clone the Repository:
@@ -28,21 +29,21 @@ Create a Virtual Environment:
 
 Install GPU-Specific Dependencies:
 
-<h2>Usage / How to Run :</h2>
+Usage / How to Run :
 Configure Paths: Update the CONFIG dictionary in the script with your local dataset paths.
 
 Run Training:
 
 Monitor Results: The script will automatically generate training_curves.png and best_model.pth in your specified output directory.
 
-<h2>Challenges / Learnings </h2>
+Challenges / Learnings :
 Hardware Constraints: Training a Vision Transformer on an RTX 3050 (4GB VRAM) required significant memory optimization. This was solved using Mixed Precision (AMP) and Gradient Accumulation to simulate a larger batch size.
 
 Class Imbalance: Many classes like "Logs" occupy very few pixels compared to "Sky". The implementation of Focal Loss was critical in preventing the model from ignoring these small but important obstacles.
 
 Installation Hurdles: Encountered ProtocolErrors and AttributeErrors due to interrupted downloads and corrupted torch files. Resolved these by performing deep cleans and using GPU-specific index URLs.
 
-<h2>Future Work </h2>
+Future Work :
 Inference Pipeline: Developing a real-time inference script for live video feeds.
 
 Backbone Scaling: Testing the "Base" and "Large" versions of DINOv2 on higher-VRAM hardware.
