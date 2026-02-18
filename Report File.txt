@@ -1,5 +1,5 @@
-<h1><br>Project Report: Offroad Terrain Semantic Segmentation </h1></br>
-<h2>Project Title </h2>
+<h1><br>Project Report: Offroad Terrain Semantic Segmentation </br></h1>
+<h2> Project Title </h2>
 Offroad-Seg: Robust Terrain Semantic Segmentation using DINOv2 and Multi-Scale Fusion
 
 <h2>Project Description </h2>
