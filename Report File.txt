@@ -1,9 +1,9 @@
 Project Report: Offroad Terrain Semantic Segmentation 
 
-Project Title 
+Project Title :
 Offroad-Seg: Robust Terrain Semantic Segmentation using DINOv2 and Multi-Scale Fusion
 
-Project Description 
+Project Description :
 This project focuses on the challenge of Semantic Segmentation in unstructured offroad environments. Unlike urban road segmentation, offroad environments lack clear lane markings and standardized geometry. This model is designed to classify 11 distinct terrain categories—such as Lush Bushes, Ground Clutter, and Rocks—to assist in autonomous navigation and obstacle avoidance for offroad vehicles.
 
 By leveraging a pre-trained DINOv2 backbone, the system extracts high-level semantic features which are then processed by a custom-built Multi-Scale Segmentation Head to produce pixel-perfect classification maps.
@@ -49,3 +49,9 @@ Inference Pipeline: Developing a real-time inference script for live video feeds
 Backbone Scaling: Testing the "Base" and "Large" versions of DINOv2 on higher-VRAM hardware.
 
 Deployment: Optimizing the model via TensorRT to run at higher frame rates on edge devices like NVIDIA Jetson.
+
+MADE BY :-
+1)Adhyansh Raina
+2)Shivang Kaushal
+3)Ankit Kumar
+4)Sambit Kumar Garanayak
